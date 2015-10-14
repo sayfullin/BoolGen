@@ -1,6 +1,10 @@
 # BoolGen
 Boolean Exressions Generator JavaScript Library
 
+[Web Application](http://ariyslan.github.io/BoolGen/)
+
+[Web Application Source](https://github.com/Ariyslan/BoolGen/tree/gh-pages)
+
 #Options
 ##type:
 
