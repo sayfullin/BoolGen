@@ -23,14 +23,14 @@ select, select.form-control{
   box-shadow: inset 0 -0px 0 #ddd;
 }
 
-.button{
+.refresh-button{
   text-align: right;
 }
 
-.button > p{
+.refresh-button > p{
   display: inline-block;
   border-bottom: 1px solid #eee;
-  font-size: 16px;
+  font-size: 14px;
   color: #444;
   cursor: pointer;
 }
@@ -42,28 +42,4 @@ select, select.form-control{
 
 .refresh-button > p:active{
   padding-top: 1px;
-}
-
-.expression-task{
-  position: relative;
-  margin-top: 15px;
-}
-
-.expression-task .user-task , .expression-task .user-answer{
-  display: inline-block;
-}
-
-.expression-task  .user-answer{
-  position: absolute;
-  right: 25;
-}
-
-.expression-task .user-answer > label{
-  margin-left: 15px;
-}
-
-.is-correct{
-  display: inline-block;
-  position: absolute;
-  right: 0;
 }
