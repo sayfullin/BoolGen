@@ -1,0 +1,110 @@
+<html>
+  <head>
+    <title>Генератор логических выражений</title>
+    <meta charset="utf-8">
+    <link rel='stylesheet' href='../lib/bootstrap.min.css'>
+    <link rel='stylesheet' href='style.css'>
+  </head>
+  <body ng-app="BoolGen" ng-controller="BoolGenCotrloller">
+    <a href="https://github.com/you"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/52760788cde945287fbb584134c4cbc2bc36f904/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png"></a>
+    <div class='contaner'>
+
+      <!-- Hearder -->
+      <h2>{{ 'TITLE' | translate }} <span class="languages">[<a ng-click="changeLanguage('en')">EN</a> | <a ng-click="changeLanguage('ru')">Ru</a>]</span></h2>
+      <p>{{ 'DESCRIPTION' | translate }}</p>
+
+      <!-- Conditions -->
+      <div class='condition row'>
+        <h4  class="box-header">{{ 'OPTIONS' | translate }}</h4>
+        <div class="col-lg-6">
+          <table class="table">
+            <thead>
+              <tr>
+                <td>{{ 'EXAMPLE' | translate }}</td>
+                <td>{{ 'QUANTITY' | translate }}</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="expType in expressionTypes">
+                <td>{{expType.example}}</td>
+                <td>
+                  <select class="form-control" ng-options="n for n in [] | range:0:7" ng-model="expType.quantity" ng-change="refresh()">
+                  </select>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="button">
+            <p ng-click="refresh()">{{ 'REGENERATE' | translate }} <span class="glyphicon glyphicon-refresh"></span></p>
+          </div>
+        </div>
+      </div>
+
+      <br />
+      <!-- Tasks -->
+      <div>
+        <h4 class="box-header">{{ 'TASKS' | translate }}</h4>
+        <br />
+          <ol>
+            <li ng-repeat="expression in generatedExpressions track by $index">
+              <div ng-if="!isArray(expression)" class="expression-task">
+                <p class="user-task" >{{expression.task}}</p>
+                <div class="user-answer">
+                  <label>
+                    <input type="radio" ng-model="expression.userAnwser" value="true">
+                    True
+                  </label>
+                  <label>
+                    <input type="radio" ng-model="expression.userAnwser" ng-value="false">
+                    False
+                  </label>
+                </div>
+                <p class="is-correct">
+                  <span ng-if="expression.isCorrect" class="correct glyphicon glyphicon-ok"></span>
+                  <span ng-if="expression.isCorrect === false" class="wrong glyphicon glyphicon-remove"></span>
+                </p>
+              </div>
+              <div ng-if="isArray(expression)">
+                <div ng-repeat="item in expression track by $index" class="expression-task">
+                  <p class="user-task">{{item.task}}</p>
+                  <div class="user-answer">
+                    <label>
+                      <input type="radio" ng-model="item.userAnwser" value="true">
+                      True
+                    </label>
+                    <label>
+                      <input type="radio" ng-model="item.userAnwser" ng-value="false">
+                      False
+                    </label>
+                  </div>
+                  <p class="is-correct">
+                    <span ng-if="item.isCorrect" class="correct glyphicon glyphicon-ok"></span>
+                    <span ng-if="item.isCorrect === false" class="wrong glyphicon glyphicon-remove"></span>
+                  </p>
+                </div>
+              </div>
+            </li>
+          </ol>
+          <br />
+          <div class="button" ng-if="!wasChecked">
+            <p ng-click="check()">{{ 'CHECK' | translate }} <span class="glyphicon glyphicon-hand-right"></span></p>
+          </div>
+      </div>
+
+    </div>
+  </body>
+  <script src='../generator/Random.js'></script>
+  <script src='../generator/Alphabet.js'></script>
+  <script src='../generator/SingleVariable.js'></script>
+  <script src='../generator/SingleArithmeticComp.js'></script>
+  <script src='../generator/Negation.js'></script>
+  <script src='../generator/Collection.js'></script>
+  <script src='../generator/PreBoolGen.js'></script>
+  <script src='../generator/WithAnyValues.js'></script>
+  <script src='../generator/BoolGen.js'></script>
+  <script src='../lib/angular.min.js'></script>
+  <script src="../lib/angular-translate.min.js"></script>
+  <script src='script.js'></script>
+  <script>
+  </script>
+</html>
