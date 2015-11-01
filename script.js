@@ -39,7 +39,7 @@ app.filter("nl2br", function($filter) {
 app.config(['$translateProvider', function ($translateProvider) {
   $translateProvider.translations('en', {
     'TITLE': 'Boolean Expression Generator',
-    'DESCRIPTION': 'Generator is designed to help computer scince teachers and students with training and checking knowledge',
+    'DESCRIPTION': 'Generator is designed to help computer science teachers and students with training and checking knowledge',
     'OPTIONS': 'Options',
     'EXAMPLE': 'Example',
     'QUANTITY': 'Quantity',
@@ -52,7 +52,7 @@ app.config(['$translateProvider', function ($translateProvider) {
 
   $translateProvider.translations('ru', {
     'TITLE': 'Генератор логических выражений',
-    'DESCRIPTION': 'Генератор призван помочь ИТ-преподавтелям и студентам с созданием логических выражений для обучения и проверки знаний',
+    'DESCRIPTION': 'Генератор призван помочь ИТ-преподавателям и студентам с созданием логических выражений для обучения и проверки знаний',
     'OPTIONS': 'Настройки',
     'EXAMPLE': 'Пример',
     'QUANTITY': 'Количество',
@@ -63,7 +63,7 @@ app.config(['$translateProvider', function ($translateProvider) {
     'SWITCH_TO_TEACHER': 'Перейти на версию для преподавателей'
   });
 
-  $translateProvider.preferredLanguage('ru');
+  $translateProvider.preferredLanguage('en');
 }]);
 
 app.controller('BoolGenCotrloller',['$scope', '$translate', function($scope, $translate){
