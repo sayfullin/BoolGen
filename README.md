@@ -1,9 +1,9 @@
 # BoolGen
 Boolean Exressions Generator JavaScript Library
 
-[Web Application](http://ariyslan.github.io/BoolGen/)
+[Web Application](http://sayfullin.github.io/BoolGen/)
 
-[Web Application Source](https://github.com/Ariyslan/BoolGen/tree/gh-pages)
+[Web Application Source](https://github.com/Sayfullin/BoolGen/tree/gh-pages)
 
 #Options
 ##type:
